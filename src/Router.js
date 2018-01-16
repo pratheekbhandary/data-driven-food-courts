@@ -15,7 +15,7 @@ export const Tabs = TabNavigator({
     Breakfast: { screen: Breakfast },
     Lunch: { screen: Lunch},
     Dinner:{ screen: Dinner},
-  },
+  }, 
   {
     tabBarPosition: 'bottom',
     tabBarOptions: {
