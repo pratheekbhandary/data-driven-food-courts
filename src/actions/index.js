@@ -15,7 +15,7 @@ export const passwordChanged= (password) =>{
     };
 };
 
-export const loginUser = ({ email, password }) => {
+export const loginUser = ({ email, password , navigation}) => {
     return (dispatch) => {
       dispatch({ type: LOGIN_USER });
   
@@ -25,7 +25,11 @@ export const loginUser = ({ email, password }) => {
           console.log(error);
   
           firebase.auth().createUserWithEmailAndPassword(email, password)
-            .then(user => loginUserSuccess(dispatch, user))
+            .then(user => {
+                loginUserSuccess(dispatch, user);
+                navigation('TabScreen');
+            }
+        )
             .catch(() => loginUserFail(dispatch));
         });
     };

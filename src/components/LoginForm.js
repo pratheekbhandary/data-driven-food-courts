@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { emailChanged, passwordChanged, loginUser } from '../actions';
 import { Card, CardSection, Input, Button, Spinner } from './common';
 
-export default class LoginForm extends Component{
+class LoginForm extends Component{
     onEmailChange(text){
         this.props.emailChanged(text);
     }
@@ -12,9 +12,9 @@ export default class LoginForm extends Component{
     onPasswordChange(password){
       this.props.passwordChanged(password);
     }
-
+ 
     onButtonPress() {
-      const { email, password } = this.props;
+      const { email, password, navigation } = this.props;
       this.props.loginUser({ email, password });
     }
 

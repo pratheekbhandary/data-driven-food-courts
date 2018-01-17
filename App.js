@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux';
 import { StyleSheet, Text, View } from 'react-native';
 import ReduxThunk from 'redux-thunk';
-import {Tabs} from './src/Router';
+import {Login} from './src/Router';
 import reducers from './src/reducers/index'; 
 
 export default class App extends React.Component {
@@ -22,7 +22,7 @@ export default class App extends React.Component {
   render() {
     return (
       <Provider store={createStore(reducers,{},applyMiddleware(ReduxThunk))}>
-        <Tabs />
+        <Login />
       </Provider>
     );
   }

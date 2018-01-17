@@ -5,6 +5,16 @@ import Menu from './components/Menu';
 import Breakfast from './components/Breakfast';
 import Lunch from './components/Lunch';
 import Dinner from './components/Dinner';
+import LoginForm from './components/LoginForm';
+
+export const Login = StackNavigator({
+    Login: {
+      screen: LoginForm,
+    },
+    TabScreen: {
+      screen: Tabs,
+    },
+  });
 
 export const Tabs = TabNavigator({
     Menu: { screen: Menu },
